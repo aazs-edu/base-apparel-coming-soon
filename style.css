@@ -1,0 +1,134 @@
+/* Start Variables */
+:root {
+    /* Fonts */
+    --body-font: 'Josefin Sans', sans-serif;
+    /* Primary Colors  */
+    --c1-color: hsl(0, 36%, 70%);
+    --c2-color: hsl(0, 93%, 68%);
+    /* Neutral Colors  */
+    --c3-color:  hsl(0, 6%, 24%);
+    /* Gradients */
+    --g1-color: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+    --g2-color: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+}
+/* End Variables */
+
+/* Start Global Rules */
+*{margin: 0; padding: 0; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;}
+body{
+    background: #fff7f8;  font-family: var(--body-font);      
+    display: flex;  justify-content: center;  align-items: center;  min-height: 100vh;
+}
+.container{margin: 0 auto;}
+@media screen and (min-width: 1440px) {.container{width: 1440px;}}
+@media screen and (max-width: 1439px) {.container{width: 375px;}}
+/* End Global Rules */
+.container{
+    display: flex; justify-content: space-between;    
+}
+.hero-wrapper .content h1 span{
+    display: block;  text-transform: uppercase;  letter-spacing: 20px;  font-size: 4.25rem;
+}
+.hero-wrapper .content h1 span:first-child{
+    font-weight: 300;  color: var(--c1-color);    
+}
+.hero-wrapper .content h1 span:not(:first-child){
+    display: block;  color: var(--c3-color);
+}
+.hero-wrapper .content > p{
+    color: var(--c1-color);  line-height: 1.8;
+}
+.hero-wrapper .content .email-input{
+    position: relative;  display: flex;  align-items: center;  justify-content: flex-end;
+}
+.hero-wrapper .content .email-input input{
+    width: 100%;  border: 1px solid #dacacd;  padding: 20px 30px;
+    background-color: transparent;  border-radius: 35px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 16.5px;  line-height: 1.15;  color: var(--c3-color);
+}
+.hero-wrapper .content .email-input input.invalid{
+    border: 2px solid #fa6561;
+}
+.invalid-icon{
+    position: absolute;
+    transform: translateX(-250%);
+    margin-right: 50px;
+}
+.hero-wrapper .content .invalid-feedback p{
+    font-size: 14px;  color: #fa6561;  padding-left: 25px;
+}
+.hero-wrapper .content .email-input input:focus{
+    border: 2px solid #dacacd;  outline: none;
+}
+.hero-wrapper .content .email-input input::placeholder{
+    color: #e5cccf;  font-size: 17px;  font-family: 'Josefin Sans', sans-serif;
+}
+.hero-wrapper .content .email-input button{
+    position: absolute;  
+    /* transform: translateX(-100%); */
+    padding: 18px 43px;
+    height: 102%;
+    border: none;
+    border-radius: 35px;
+    background: var(--g2-color);
+    cursor: pointer;
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1);
+}
+.hero-wrapper .content .email-input button:hover{
+    background: #facecf;
+}
+
+@media screen and (min-width: 1440px) {
+    .container{
+        /* background-image: url(images/bg-pattern-desktop.svg); */        
+    }
+    .hero-desktop{display: block;}
+    .hero-mobile{display: none;}
+    .hero-wrapper{
+        padding-top: 60px;  padding-left: 165px;    
+    }
+    .hero-wrapper .logo{margin-bottom: 120px;}
+    .hero-wrapper .content{
+        width: 448px;  height: 402px;
+    }
+    .hero-wrapper .content{
+        display: flex;  flex-direction: column;  justify-content: space-between;
+    }
+}
+
+.hide{
+    display: none;
+}
+
+/* Mobile Media Rules */
+@media screen and (max-width: 1439px) {
+    .container{
+        flex-direction: column;
+    }
+    .content{
+        text-align: center;
+        padding: 65px 30px;
+    }
+    .hero-desktop{display: none;}
+    .hero-mobile{display: block;}
+    .hero-wrapper .content h1 span{
+        font-size: 2.25rem; letter-spacing: 10px;
+    }
+    .hero-wrapper .content > p{
+        font-size: .9125rem;  margin-bottom: 25px;  margin-top: 25px;
+    }
+    .logo{
+        padding: 30px;  width: 50%;
+    }
+    .hero-wrapper .content .email-input button{
+        padding: 17px 30px;
+    }
+    .hero-wrapper .content .invalid-feedback .invalid-feedback-msg{
+       text-align: left;  padding-top: 10px;
+    }
+    .invalid-icon{
+        transform: translateX(-250%);
+        margin-right: 20px;
+    }
+}
